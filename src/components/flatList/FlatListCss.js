@@ -1,0 +1,40 @@
+import {StyleSheet} from "react-native"
+
+export const Styles = StyleSheet.create({
+    mainContainer:{
+        backgroundColor:'#353b48',
+    },
+    heading:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        padding:10
+    },
+    seeAll:{
+        flexDirection:'row',
+        alignItems:'center',
+    },
+    seeAllText:{
+        color:'#e7e7e7',
+        fontSize:12,
+        fontFamily:'Popping-Regular'
+    },
+    headingTitle:{
+        color:'#FFF',
+        fontSize:16,
+        fontFamily:'Poppins-Regular',
+        marginTop:8
+    },
+    componentStyle:{
+        padding:5,
+        marginLeft:5
+    },
+    componentText:{
+        color:'#FFF',
+        fontFamily:'Poppins-Regular',
+    },
+    brandingText:{
+        flexDirection:'row',
+        justifyContent:'space-between'
+    }
+})
