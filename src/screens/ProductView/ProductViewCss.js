@@ -4,7 +4,6 @@ import { height, width } from "../../components/constants/Dimension"
 export const Styles = StyleSheet.create({
     mainContainer: {
         flex:1,
-        paddingTop: StatusBar.currentHeight,
         backgroundColor:  '#353b48'
     },
     textStyle: {
@@ -21,7 +20,5 @@ export const Styles = StyleSheet.create({
         borderRadius: 5,
         borderColor: '#f1f2f6',
         borderWidth: 0.1,
-        elevation: 12,
-        shadowColor: 'rgba(255,255,255,0.05)'
     }
 })

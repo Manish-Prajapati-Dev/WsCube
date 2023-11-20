@@ -9,13 +9,14 @@ export const Styles = StyleSheet.create({
         width:width,
         height:height*.08,
         position:'relative',
-        borderTopLeftRadius:15,
-        borderTopRightRadius:15
+        borderBottomLeftRadius:25,
+        borderBottomRightRadius:25
     },
     textStyle:{
         color:'#FFF',
         fontSize:20,
         marginHorizontal:10,
-        fontFamily:'Poppins-Regular'
+        fontFamily:'Poppins-Regular',
+        textTransform:'capitalize'
     }
 })

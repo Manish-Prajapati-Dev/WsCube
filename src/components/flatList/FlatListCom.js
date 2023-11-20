@@ -24,15 +24,15 @@ function RenderItem({ item }) {
                 </Text>
             </View>
             <View style={Styles.brandingText} >
-            <Text style={Styles.componentText} >$ {item.item.price}/-</Text>
-            <Text style={Styles.componentText} ><StarIC name="star" size={15} color="#f9ca24" />{item.item.rating} </Text>
+                <Text style={Styles.componentText} >$ {item.item.price}/-</Text>
+                <Text style={Styles.componentText} ><StarIC name="star" size={15} color="#f9ca24" />{item.item.rating} </Text>
             </View>
         </View>
     )
 }
 
 export default function FlatListCom({ data, clickSeeAll, heading }) {
-
+    
     return (
         <View style={Styles.mainContainer} >
             <View style={Styles.heading}>

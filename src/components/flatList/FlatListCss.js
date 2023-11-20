@@ -23,7 +23,8 @@ export const Styles = StyleSheet.create({
         color:'#FFF',
         fontSize:16,
         fontFamily:'Poppins-Regular',
-        marginTop:8
+        marginTop:8,
+        textTransform:'capitalize'
     },
     componentStyle:{
         padding:5,

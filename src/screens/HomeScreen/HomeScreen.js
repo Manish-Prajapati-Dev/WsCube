@@ -1,4 +1,4 @@
-import { View, StatusBar, ScrollView, ActivityIndicator, RefreshControl } from 'react-native'
+import { View, StatusBar, ScrollView, ActivityIndicator, RefreshControl, Text } from 'react-native'
 import React from 'react'
 import Header from '../../components/header/Header'
 import FlatListCom from '../../components/flatList/FlatListCom'
@@ -35,6 +35,24 @@ export default function HomeScreen({ navigation }) {
         }
     }
 
+    const displayCategory = () => {
+        const uniqueCategories = [...new Set(data.map(item => item.category))];
+        return uniqueCategories.map((item) => {
+            const dd = data.filter((i) => { return (i.category === item) })
+            // console.log("dd>>>>",dd)
+            return (<View>
+                <FlatListCom
+                    data={dd}
+                    heading={item}
+                    clickSeeAll={() => navigation.navigate("ProductView", {
+                        item: dd
+                    })}
+                />
+            </View>
+            )
+        })
+    }
+
     React.useEffect(() => {
         apiCall()
     }, [])
@@ -42,20 +60,16 @@ export default function HomeScreen({ navigation }) {
     return (
         <View style={Styles.mainContainer} >
             <StatusBar translucent backgroundColor={'transparent'} />
-            <Header />
+            <Header title="Products" />
             {loading ?
-                <ActivityIndicator style={{ flex: 1, alignSelf: 'center' }} />
+                <ActivityIndicator style={Styles.indicatorStyle} />
                 :
-                <ScrollView 
-                refreshControl={
-                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh}
-                    />}
+                <ScrollView
+                    refreshControl={
+                        <RefreshControl refreshing={refreshing} onRefresh={onRefresh}
+                        />}
                 >
-                    <FlatListCom data={data} heading="Popular" clickSeeAll={() => navigation.navigate("ProductView",{item:data})} />
-                    <View style={Styles.m10} />
-                    <FlatListCom data={data} heading="Recent view" clickSeeAll={() => navigation.navigate("ProductView",{item:data})} />
-                    <View style={Styles.m10} />
-                    <FlatListCom data={data} heading="Trending" clickSeeAll={()=>navigation.navigate("ProductView",{item:data})} />
+                    {displayCategory()}
                 </ScrollView>
             }
         </View>
